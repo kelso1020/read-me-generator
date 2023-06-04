@@ -26,11 +26,6 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'license',
-            message: 'Which license type?',
-        },
-        {
-            type: 'input',
             name: 'contributing',
             message: 'Enter the contribution guidlelines for your project:',
         },
@@ -49,17 +44,32 @@ const questions = () => {
             name: 'email',
             message: 'Enter your email address:',
         },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Choose a license:',
+            choices: ['None', 'Apache License 2.0', 'GNU General Public License v3.0',
+            'MIT License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal',
+            'Eclipse Public License 2.0', 'Mozilla Public License 2.0']
+        },
     ])
 };
 
 // TODO: Create a function to write README file
 const generateReadMe = ({title, description, installation, usage, license, contributing, test, github, email}) => 
-`#${title}
+`# ${title}
+
+
+## Table of Contents
+- [Project Description](#description)
+- [Installation Instrustions](#installation)
+- [Usage Information](#usage)
+- [Contribution Guidelines](#contributing)
+- [Test Instructions](#tests)
+- [Questions](#questions)
 
 ## Description
 ${description}
-
-## Table of Contents
 
 ## Installation
 ${installation}
