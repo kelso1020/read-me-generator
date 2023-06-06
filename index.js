@@ -61,7 +61,7 @@ const init = () => {
     questions()
     .then((answers) => {
         const license = answers.license;
-        return writeFile('./utils/README.md', generateMarkdown(answers, license));
+        return writeFile('./utils/sampleREADME.md', generateMarkdown(answers, license));
     })
     .then(() => console.log('Successfully wrote to README.md'))
     .catch((err) => console.error(err));
